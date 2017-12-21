@@ -1,0 +1,38 @@
+<script type="text/javascript">
+RED.nodes.registerType( 'rtpm', {
+  category: 'function',
+  color: '#d8bfd8',
+  defaults: {
+    name: { value: '' }
+  },
+  inputs: 1,
+  outputs: 1,
+  icon: 'file.png',
+  label: function(){
+    return this.name || 'rtpm';
+  }
+});
+</script>
+
+<script type="text/x-red" data-template-name="rtpm">
+<div class="form-row">
+  <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+  <input type="text" id="node-input-name" placeholder="Name">
+<!--
+  <label for="node-input-line"><i class="icon-tag"></i> Line</label>
+  <select id="node-input-line">
+  <option value="kyoto" selected>Kyoto</option>
+  <option value="kansaiairport">Kansai Airport</option>
+  <option value="osakaloop">Osaka Loop</option>
+  <option value="yumesaki">Yumesaki</option>
+  </select>
+-->
+</div>
+</script>
+
+<script type="text/x-red" data-help-name="rtpm">
+  <p>Node for Node-RED which retrive realtime train information.</p>
+  <br/>
+</script>
+
+
