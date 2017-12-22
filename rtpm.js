@@ -4,9 +4,12 @@ module.exports = function( RED ){
   function HashNode( config ){
     RED.nodes.createNode( this, config );
 
+    this.line = config.line;
+
     var node = this;
     node.on( 'input', function( msg ){
       var line = msg.payload;
+      if( !line ){ line = this.line; }
       var url = 'https://www.train-guide.westjr.co.jp/api/v1/' + line + '.json';
       var options = { url: url, method: 'GET' };
       request( options, ( err0, res0, body0 ) => {
